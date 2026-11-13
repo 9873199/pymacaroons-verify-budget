@@ -10,7 +10,12 @@ from pymacaroons.utils import (
     generate_derived_key,
     sign_third_party_caveat,
 )
-from pymacaroons.exceptions import MacaroonUnmetCaveatException
+from pymacaroons.exceptions import (
+    MacaroonBudgetExceededException,
+    MacaroonDischargeCycleException,
+    MacaroonUnmetCaveatException,
+    MacaroonVerificationFailedException,
+)
 from .base_third_party import (
     BaseThirdPartyCaveatDelegate,
     BaseThirdPartyCaveatVerifierDelegate,
@@ -56,10 +61,15 @@ class ThirdPartyCaveatVerifierDelegate(BaseThirdPartyCaveatVerifierDelegate):
 
     def __init__(self, discharge_macaroons=None, *args, **kwargs):
         super(ThirdPartyCaveatVerifierDelegate, self).__init__(*args, **kwargs)
-        if discharge_macaroons:
-            self.discharge_macaroons = {
-                m.identifier_bytes: m for m in discharge_macaroons
-            }
+        # Keep every supplied discharge macaroon, including several candidates
+        # that share an identifier. A dict would silently drop all but one of
+        # them, so the verifier could never reach a valid candidate listed
+        # behind an invalid one.
+        self.discharge_macaroons = {}
+        for macaroon in discharge_macaroons or []:
+            self.discharge_macaroons.setdefault(
+                macaroon.identifier_bytes, []
+            ).append(macaroon)
 
     def verify_third_party_caveat(self,
                                   verifier,
@@ -67,24 +77,63 @@ class ThirdPartyCaveatVerifierDelegate(BaseThirdPartyCaveatVerifierDelegate):
                                   root,
                                   macaroon,
                                   signature):
-        caveat_macaroon = self._caveat_macaroon(caveat)
+        context = verifier.verification_context
+        candidates = self.discharge_macaroons.get(
+            caveat.caveat_id_bytes, []
+        )
+        if not candidates:
+            raise MacaroonUnmetCaveatException(
+                'Caveat not met. No discharge macaroon found for identifier: '
+                '{}'.format(caveat.caveat_id_bytes)
+            )
+
         caveat_key = self._extract_caveat_key(signature, caveat)
 
-        discharge = self.discharge_macaroons[caveat.caveat_id_bytes]
-        del self.discharge_macaroons[caveat.caveat_id_bytes]
+        # Every candidate that is actually entered counts as an attempt, even
+        # if a later backtrack discards the branch. The budget is shared by
+        # the whole verification, so failed branches never get their attempts
+        # refunded.
+        last_failure = None
+        for candidate in candidates:
+            try:
+                # Numeric budget exhaustion and the path cycle guard are raised
+                # here, before any verification work (so no business caveat
+                # callbacks run). A budget breach is terminal; a cycle only
+                # invalidates this branch and lets the next candidate run.
+                context.enter_discharge(candidate)
+            except MacaroonDischargeCycleException as exc:
+                # The re-entrant entry never started, so nothing was charged
+                # and there is no path slot to release.
+                last_failure = exc
+                continue
 
-        caveat_met = verifier.verify_discharge(
-            root,
-            caveat_macaroon,
-            caveat_key,
-        )
+            try:
+                caveat_met = verifier.verify_discharge(
+                    root,
+                    candidate,
+                    caveat_key,
+                )
+            except MacaroonBudgetExceededException:
+                # A nested discharge hit the budget: stop immediately instead
+                # of trying another candidate and spending more callbacks.
+                raise
+            except MacaroonVerificationFailedException as exc:
+                # Bad signature, unmet caveat, nested cycle, etc. The attempt
+                # remains spent; move on to the next candidate without
+                # refunding it.
+                context.exit_discharge(candidate)
+                last_failure = exc
+                continue
 
-        # if the caveat wasn't successfully discharged,
-        # restore the discharge macaroon to the available set
-        if not caveat_met:
-            self.discharge_macaroons[caveat.caveat_id_bytes] = discharge
+            context.exit_discharge(candidate)
+            if caveat_met:
+                return True
 
-        return caveat_met
+        if last_failure is not None:
+            # Every candidate failed: surface the concrete reason (e.g. the
+            # cycle) rather than a generic signature mismatch.
+            raise last_failure
+        return False
 
     def update_signature(self, signature, caveat):
         return binascii.unhexlify(
@@ -94,18 +143,6 @@ class ThirdPartyCaveatVerifierDelegate(BaseThirdPartyCaveatVerifierDelegate):
                 caveat._caveat_id
             )
         )
-
-    def _caveat_macaroon(self, caveat):
-        caveat_macaroon = self.discharge_macaroons.get(
-            caveat.caveat_id_bytes, None)
-
-        if not caveat_macaroon:
-            raise MacaroonUnmetCaveatException(
-                'Caveat not met. No discharge macaroon found for identifier: '
-                '{}'.format(caveat.caveat_id_bytes)
-            )
-
-        return caveat_macaroon
 
     def _extract_caveat_key(self, signature, caveat):
         key = truncate_or_pad(signature)

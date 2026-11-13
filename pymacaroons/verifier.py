@@ -12,6 +12,7 @@ from pymacaroons.caveat_delegates import (
     FirstPartyCaveatVerifierDelegate,
     ThirdPartyCaveatVerifierDelegate,
 )
+from pymacaroons.verification_context import VerificationContext
 from pymacaroons.utils import (
     convert_to_bytes,
     convert_to_string,
@@ -26,6 +27,9 @@ class Verifier(object):
         self.predicates = []
         self.callbacks = [self.verify_exact]
         self.calculated_signature = None
+        # Set afresh for every verify() call so that separate verifications,
+        # including repeated calls on the same Verifier, never share a budget.
+        self.verification_context = None
         self.first_party_caveat_verifier_delegate = (
             FirstPartyCaveatVerifierDelegate()
         )
@@ -48,8 +52,16 @@ class Verifier(object):
     def verify_exact(self, predicate):
         return predicate in self.predicates
 
-    def verify(self, macaroon, key):
+    def verify(self, macaroon, key, max_depth=None, max_attempts=None):
         key = generate_derived_key(convert_to_bytes(key))
+        # A brand-new context per verify: branches within this verification
+        # share the depth and attempt budgets, but a later verify (on this or
+        # another Verifier) starts from zero. With no limits the API behaves
+        # exactly as before apart from the path-based cycle guard.
+        self.verification_context = VerificationContext(
+            max_depth=max_depth,
+            max_attempts=max_attempts,
+        )
         return self.verify_discharge(
             macaroon,
             macaroon,

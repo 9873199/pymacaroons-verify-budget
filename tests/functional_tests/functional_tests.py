@@ -420,5 +420,9 @@ never use the same secret twice'
         m2 = Macaroon(location="bob", identifier="bob-is-great", key="bob-caveat-root-key")
         m2.add_third_party_caveat("charlie", "bob-caveat-root-key", "bob-is-great")
         m2 = m1.prepare_for_request(m2)
-        with pytest.raises(MacaroonUnmetCaveatException):
+        # The discharge points back at its own identifier, so re-entering the
+        # same candidate on the current recursion path is a cycle. It is
+        # reported as a cycle failure rather than relying on recursion or on
+        # the old single-entry discharge map raising an unmet-caveat error.
+        with pytest.raises(MacaroonDischargeCycleException):
             Verifier(discharge_macaroons=[m2]).verify(m1, "root-key")
