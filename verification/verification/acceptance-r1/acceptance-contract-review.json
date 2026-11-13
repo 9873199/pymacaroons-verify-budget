@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-13T16:19:38+08:00",
+  "reason": "After final API review the dedicated path-cycle exception is accepted as a valid bounded cycle result. The prepared generic fixture did not know its name. This adapter correction occurs before independent execution; no model source changes or penalty."
+}

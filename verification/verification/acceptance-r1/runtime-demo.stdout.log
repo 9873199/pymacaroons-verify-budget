@@ -1,0 +1,10 @@
+Chain length 3, attempts 3: accepted=True
+  candidate attempts: 3 signature entries: 4 callbacks: ['leaf-permission']
+Chain length 3, attempts 2: MacaroonBudgetExceededException: Maximum discharge candidate attempt budget of 2 exceeded
+  candidate attempts: 2 signature entries: 3 callbacks: []
+Shared discharge on two branches: accepted=True
+  candidate attempts: 4 signature entries: 5 callbacks: ['leaf-permission', 'leaf-permission']
+Wrong-key candidate before a valid sibling: CryptoError: Decryption failed. Ciphertext failed verification
+  candidate attempts: 1 signature entries: 2 callbacks: []
+Same identifier under a new derived key, budget 2: accepted=True
+  candidate attempts: 2 signature entries: 3 callbacks: ['second-authorized']

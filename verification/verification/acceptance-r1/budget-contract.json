@@ -1,0 +1,24 @@
+{
+  "time": "2026-11-13T16:19:45+08:00",
+  "argv": [
+    "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\macaroon\\env\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-o",
+    "addopts=",
+    "-p",
+    "no:cacheprovider",
+    "--tb=short",
+    "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1/test_macaroon_contract.py",
+    "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1/test_macaroon_context.py",
+    "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1/test_macaroon_nested_candidate.py",
+    "--basetemp",
+    "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1/tmp-contract"
+  ],
+  "cwd": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\replay-source",
+  "exit_code": 1,
+  "stdout_log": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\budget-contract.stdout.log",
+  "stderr_log": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\budget-contract.stderr.log"
+}

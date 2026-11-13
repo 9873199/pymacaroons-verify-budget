@@ -1,0 +1,98 @@
+{
+  "uid": 1744,
+  "run_id": "uf-20261112-new15-macaroon",
+  "reviewed": true,
+  "reviewer": "Codex primary reviewer",
+  "frozen_trace_sha256": "12d72dcfc515f15d6cca5b6637bd61f042ca7e5a7b6b621b846a27f28e1335db",
+  "revision": "acceptance-r1",
+  "product_modules": [
+    "pymacaroons",
+    "pymacaroons.verifier",
+    "pymacaroons.caveat_delegates.third_party"
+  ],
+  "support_files": [
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\macaroon-independent-tests-r2.py",
+      "path": "test_macaroon_contract.py",
+      "sha256": "a22f1fc09318eb80af99833e6f095a510ac4280d9777de4fbd7a5e111658649c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\macaroon-context-tests.py",
+      "path": "test_macaroon_context.py",
+      "sha256": "948e18c533118fec091d5fa1956438e5220149a46a05909ac839678e80650ef4"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\macaroon-fixtures.py",
+      "path": "macaroon-fixtures.py",
+      "sha256": "9e7bff76ffa1c16587cc5a770001dfe0ba2b9a34643378f8cd84f15be3c38c2d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\macaroon-api-r1.py",
+      "path": "macaroon_api.py",
+      "sha256": "ea6f65e11e097e7d4058d5fa606500d6cc8d503bc2e0106950af7bf10472e934"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\macaroon-nested-candidate-r1.py",
+      "path": "test_macaroon_nested_candidate.py",
+      "sha256": "528164af074bf85a6d27114dc18e9f2e6d12e1cb7f3807e68a04b723b618383c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\macaroon-demo-r1.py",
+      "path": "macaroon-demo.py",
+      "sha256": "9a9d18ed3a9ff13760243d72da426ce4a63c30c8a5617835c1d6acef84f10cd1"
+    }
+  ],
+  "commands": [
+    {
+      "name": "budget-contract",
+      "argv": [
+        "{python}",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--tb=short",
+        "{verification}/test_macaroon_contract.py",
+        "{verification}/test_macaroon_context.py",
+        "{verification}/test_macaroon_nested_candidate.py",
+        "--basetemp",
+        "{verification}/tmp-contract"
+      ]
+    },
+    {
+      "name": "functional-suite",
+      "argv": [
+        "{python}",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--tb=short",
+        "tests/functional_tests/functional_tests.py",
+        "tests/functional_tests/budget_tests.py",
+        "tests/functional_tests/serialization_tests.py",
+        "tests/functional_tests/encrypted_field_tests.py",
+        "tests/functional_tests/test_binder.py",
+        "--basetemp",
+        "{verification}/tmp-package"
+      ],
+      "timeout": 300
+    },
+    {
+      "name": "runtime-demo",
+      "argv": [
+        "{python}",
+        "-B",
+        "{verification}/macaroon-demo.py"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "time": "2026-11-13T14:38:40+08:00",
+  "uid": 1744,
+  "status": "PASS",
+  "single_native_trace": "D:\\hc\\userFeedback\\cache\\runs\\uf-20261112-new15-macaroon\\frozen\\trajectory-original.jsonl",
+  "trace_sha256": "12d72dcfc515f15d6cca5b6637bd61f042ca7e5a7b6b621b846a27f28e1335db",
+  "session_id": "eb71cd15-49fd-44a6-9d4e-4f1c683af6de",
+  "prompt_id": "be83e853-14cb-4d35-9bf5-37143921d370",
+  "exact_single_prompt": true,
+  "native_models": [
+    "auto_model/urm"
+  ],
+  "native_efforts": [
+    "high"
+  ],
+  "three_explicit_high_settings": true,
+  "native_success": true,
+  "frozen_files_unchanged": true,
+  "private_reasoning_excluded": true,
+  "event_counts": {
+    "queue-operation": 2,
+    "user": 56,
+    "attachment": 54,
+    "atis-latch": 16,
+    "assistant": 134,
+    "last-prompt": 16
+  }
+}

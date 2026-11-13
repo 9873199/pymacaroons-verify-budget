@@ -1,0 +1,57 @@
+{
+  "process": [
+    {
+      "native_lines": [
+        94,
+        106,
+        148,
+        149,
+        170,
+        171,
+        191,
+        203,
+        210,
+        219,
+        229,
+        230
+      ],
+      "fact": "Introduced candidate loop and path identity, tested wrong-then-right candidates without nested caveats, and revised cycle-branch handling; derived-key identity was not incorporated into the final tests."
+    }
+  ],
+  "product": [
+    {
+      "file": "pymacaroons/caveat_delegates/third_party.py",
+      "function": "verify_third_party_caveat",
+      "lines": [
+        90,
+        111,
+        120,
+        150
+      ],
+      "fact": "CryptoError from a wrong-key nested candidate is not caught as a recoverable candidate failure."
+    },
+    {
+      "file": "pymacaroons/verification_context.py",
+      "function": "_identity",
+      "lines": [
+        30,
+        31,
+        35,
+        36
+      ],
+      "fact": "Root verification id and candidate id omit the current derived verification key."
+    }
+  ],
+  "requirements": {
+    "basic_budgets_and_boundaries": "test_macaroon_contract.py",
+    "derived_context_and_charging": "test_macaroon_context.py",
+    "nested_invalid_candidate_fallback": "test_macaroon_nested_candidate.py",
+    "actual_counts": "runtime-demo.stdout.log"
+  },
+  "diversity": "D:\\hc\\userFeedback\\cache\\prompts-security15-20261112-r1\\continuation-r1\\diversity-rechecked.json",
+  "time": "2026-11-13T16:27:45+08:00",
+  "uid": 1744,
+  "frozen_commit": "7bb9d16a26c31ff2b797eec06a3628361c6c1dfb",
+  "native_trace_sha256": "12d72dcfc515f15d6cca5b6637bd61f042ca7e5a7b6b621b846a27f28e1335db",
+  "no_model_source_changes_after_freeze": true
+}

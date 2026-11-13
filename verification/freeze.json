@@ -1,0 +1,278 @@
+{
+  "time": "2026-11-13T14:38:03+08:00",
+  "task_id": "uf-20261112-new15-macaroon",
+  "run_id": "uf-20261112-new15-macaroon",
+  "uid": 1744,
+  "workspace": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\sources\\macaroon",
+  "artifact_directory": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\frozen-artifact",
+  "git_head_after_model": "78c55c1d33a0b23ddc71140a9c999f957d79e9dd",
+  "initial_sha": "78c55c1d33a0b23ddc71140a9c999f957d79e9dd",
+  "trajectory_file": "D:\\hc\\userFeedback\\cache\\runs\\uf-20261112-new15-macaroon\\frozen\\trajectory-original.jsonl",
+  "trajectory_sha256": "12d72dcfc515f15d6cca5b6637bd61f042ca7e5a7b6b621b846a27f28e1335db",
+  "session_ids": [
+    "eb71cd15-49fd-44a6-9d4e-4f1c683af6de"
+  ],
+  "prompt_ids": [
+    "be83e853-14cb-4d35-9bf5-37143921d370"
+  ],
+  "user_turns": 1,
+  "prompt_sha256": "b09d07b338fa2d230c4a2a24545cf6d3424fbb6093369a2fc272ac462c812c32",
+  "frozen_files": [
+    {
+      "path": ".bumpversion.cfg",
+      "sha256": "30862ae7fed4a0fa6c84d33208be80426e26c2da24ead85d0941b70e5ceaed79",
+      "bytes": 171
+    },
+    {
+      "path": ".coveragerc",
+      "sha256": "9889a5c4ab20b8500a16495026ea2303058e8eb0c9a711be7d637804a02d5b1a",
+      "bytes": 149
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "a17b34ee613a38e09dd5acc58114cc12c24503fdf86dfe9f75db25126a52cc92",
+      "bytes": 764
+    },
+    {
+      "path": ".github/workflows/lint.yml",
+      "sha256": "52bfff1f3fda81727e0498cbab10a3a17b05f6d0be5c60cedd50fd2478408fe3",
+      "bytes": 420
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "5bfa91baeb721fd794419d7c5d1d1d1ea5f378bd427a4a659994396c6d0401ae",
+      "bytes": 665
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "e92893367b743adca301486c77f1f440490cd3c1a7a03ea313ed5f9889dbb6ae",
+      "bytes": 1074
+    },
+    {
+      "path": "MANIFEST.in",
+      "sha256": "885845ad61c32d9d1a98df65e618058276858a28d73b4b5dad3946dc1b475155",
+      "bytes": 140
+    },
+    {
+      "path": "README.md",
+      "sha256": "29ad22b8722ae6db3a29a35e38a7f90ca8aaef79e1f7874367aa53956ba64701",
+      "bytes": 6146
+    },
+    {
+      "path": "docs/Makefile",
+      "sha256": "0b35dfbeec8789e634817a3dd382c38a93343a3e41242e87b16f53658799e3ca",
+      "bytes": 6782
+    },
+    {
+      "path": "docs/_static/.gitkeep",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "docs/_templates/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/conf.py",
+      "sha256": "988bc2cda5fb0153a5c715d67f8c8771f9573bd86015c0e4b85b853240b267e3",
+      "bytes": 8230
+    },
+    {
+      "path": "docs/index.rst",
+      "sha256": "3817a5e25f4b3513d6df54fc0f1f5cf8fe928807528f07fd0820c96f5c0f8e4f",
+      "bytes": 856
+    },
+    {
+      "path": "docs/make.bat",
+      "sha256": "f1e02f5a8c008ce39d64d3be8de3c0b1a6055777f846fd0ec275e0652fef9d9b",
+      "bytes": 6711
+    },
+    {
+      "path": "pymacaroons/__init__.py",
+      "sha256": "817aa27047206bbe08c5869c6fdb52a8ca4af06fc93807959f7ffcddb31d6e6d",
+      "bytes": 391
+    },
+    {
+      "path": "pymacaroons/binders/__init__.py",
+      "sha256": "ec78d6f05c2a43a868be2408c4bf1e90b2a8f4be9534e8934ae5cb890731dbfd",
+      "bytes": 154
+    },
+    {
+      "path": "pymacaroons/binders/base_binder.py",
+      "sha256": "22e72e65acfcf063125406754a34b258da88d1eedcbe491230c294acce6b0c2b",
+      "bytes": 398
+    },
+    {
+      "path": "pymacaroons/binders/hash_signatures_binder.py",
+      "sha256": "e053d116f4f125600917aa948de8f55e71a6cd35f92c51ac1a9511382178ac9d",
+      "bytes": 523
+    },
+    {
+      "path": "pymacaroons/caveat.py",
+      "sha256": "8153b08c5989dfc4f991ee3555be0ed8bb7fdff3606d7de8eb1a46a2d683677f",
+      "bytes": 1974
+    },
+    {
+      "path": "pymacaroons/caveat_delegates/__init__.py",
+      "sha256": "866e572f7fbbb5b134389789d9582907aa87d90785b8d484d76b7da326ff19bf",
+      "bytes": 561
+    },
+    {
+      "path": "pymacaroons/caveat_delegates/base_first_party.py",
+      "sha256": "aa60d5b9d79d440b26edce2ce6d52008783f440ad474dd935095c4557b1cb382",
+      "bytes": 754
+    },
+    {
+      "path": "pymacaroons/caveat_delegates/base_third_party.py",
+      "sha256": "f7dbe60ddc1cea6fe0fbf893767a0e6ae4bbcd08810a3bc3990fa735fa25fbb3",
+      "bytes": 1107
+    },
+    {
+      "path": "pymacaroons/caveat_delegates/encrypted_first_party.py",
+      "sha256": "d9b777c021b8cca1337aea63d101bc7622186fc24f2d8fd2cfe7f4950f6ce2bb",
+      "bytes": 2061
+    },
+    {
+      "path": "pymacaroons/caveat_delegates/first_party.py",
+      "sha256": "50691d81885547ea370494eb93fddfd0946ad77edf48c4dbb784436c722e1adf",
+      "bytes": 1690
+    },
+    {
+      "path": "pymacaroons/caveat_delegates/third_party.py",
+      "sha256": "4f3a639b26db877b3a6a8832012bc0579d498e92cd65de33a207a358a52de62f",
+      "bytes": 5675
+    },
+    {
+      "path": "pymacaroons/exceptions.py",
+      "sha256": "5daba551179bebe0e66b016e066f98ff4df5e211defbb6b5bdeb8cb3fbe07db7",
+      "bytes": 1419
+    },
+    {
+      "path": "pymacaroons/field_encryptors/__init__.py",
+      "sha256": "59706ef982f356a585198b21391b670a88ee8b66fc4021804b0c83a9e065ddc3",
+      "bytes": 173
+    },
+    {
+      "path": "pymacaroons/field_encryptors/base_field_encryptor.py",
+      "sha256": "bea7254cca78c4e26e4f9d57c433aeddef5929cbd6b17443848ed759603d11ca",
+      "bytes": 584
+    },
+    {
+      "path": "pymacaroons/field_encryptors/secret_box_encryptor.py",
+      "sha256": "7455c54d223d29e32dc53eb9a136a09e22219a918bfa22e85da76ee60f25fe41",
+      "bytes": 1080
+    },
+    {
+      "path": "pymacaroons/macaroon.py",
+      "sha256": "f43812ceced9264bc5f26cf0b3f6767e0572c06da038e63b4b578a10a5d3c5e8",
+      "bytes": 4957
+    },
+    {
+      "path": "pymacaroons/serializers/__init__.py",
+      "sha256": "897b4d09a77cbe9b4e94778aa1e3638851285c586210a7091bcdd9d8ae92ae5a",
+      "bytes": 219
+    },
+    {
+      "path": "pymacaroons/serializers/base_serializer.py",
+      "sha256": "2f972c80af6b8e01f727755cfb5c14db4f6f5aa13bcdda986c27b9a726aec52b",
+      "bytes": 242
+    },
+    {
+      "path": "pymacaroons/serializers/binary_serializer.py",
+      "sha256": "a88e575666094db7758d63ffb0f22f98e051562300ab0f02fe78c13eabb41fdf",
+      "bytes": 12592
+    },
+    {
+      "path": "pymacaroons/serializers/json_serializer.py",
+      "sha256": "9681f00e3165ec5268ad4dd687de0e2221a0274fb60dd018c1ba519723cdd3f2",
+      "bytes": 5955
+    },
+    {
+      "path": "pymacaroons/utils.py",
+      "sha256": "9163761d92496a7d7ef32663f0cded8f22c373141fec6c2e20ff486a5e4e6f0e",
+      "bytes": 3271
+    },
+    {
+      "path": "pymacaroons/verification_context.py",
+      "sha256": "6bdf4f75f4f63bcd17ca6f0599109d6f6036af147f295945a8c69a5ffd865483",
+      "bytes": 2833
+    },
+    {
+      "path": "pymacaroons/verifier.py",
+      "sha256": "2958edb846db4b4134be4b6c452335b741aa6a1ee66d5d571682c9ebca950fe9",
+      "bytes": 4745
+    },
+    {
+      "path": "pytest.ini",
+      "sha256": "db43e5ba92f95ca9a1dce954cb0762aea5e5bc6d5b681bedab50adb0790a781e",
+      "bytes": 35
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "92e67fccecfe675d5b41a66ef8e10aa9d82c50ae65d2a187008e019b85df8f4a",
+      "bytes": 176
+    },
+    {
+      "path": "setup.cfg",
+      "sha256": "ccffc393f92a276c4c5d709cb30d60260d4d86561c217cd479fde8bb4c0494c2",
+      "bytes": 67
+    },
+    {
+      "path": "setup.py",
+      "sha256": "cf04c487d9becf4c4e98293db78aaebc4ac33a04bd1b891e630a97eed4631e21",
+      "bytes": 1756
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "tests/functional_tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "tests/functional_tests/budget_tests.py",
+      "sha256": "b61e9aefe3734daa0c345827d4ce585665fd3cdcc66784b36c5c349d8a332b83",
+      "bytes": 13226
+    },
+    {
+      "path": "tests/functional_tests/encrypted_field_tests.py",
+      "sha256": "08079046d48470da1573611ef8726495066b6b94de1ca8f7b1f5703f41744084",
+      "bytes": 1798
+    },
+    {
+      "path": "tests/functional_tests/functional_tests.py",
+      "sha256": "5d06e04725f3a355c8343439280a2db31f416c4bfad47f2c258645a776295ad6",
+      "bytes": 17523
+    },
+    {
+      "path": "tests/functional_tests/serialization_tests.py",
+      "sha256": "68f8c05b15e74f72da6c32b67756d8f79f9612fa0240d68756645fb36b8922cd",
+      "bytes": 4021
+    },
+    {
+      "path": "tests/functional_tests/test_binder.py",
+      "sha256": "4c551139612a3c8b6d06d3041ee75a7570132285ca8c9e788d4b6390fa4b3d0d",
+      "bytes": 446
+    },
+    {
+      "path": "tests/property_tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "tests/property_tests/macaroon_property_tests.py",
+      "sha256": "89aaaddddeb1533f3f6a7313b93b227c07735d697b00264bb5faa59edf2e6372",
+      "bytes": 1597
+    },
+    {
+      "path": "tox.ini",
+      "sha256": "56cdc29a7910ead7554f9b845af3b863ce6de174a6410fb19e69322fc6243ec6",
+      "bytes": 644
+    }
+  ],
+  "no_postrun_product_changes": true
+}

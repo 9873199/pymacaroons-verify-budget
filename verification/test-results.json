@@ -1,0 +1,12 @@
+{
+  "independent_contract": {
+    "passed": 16,
+    "failed": 2
+  },
+  "functional_suite": {
+    "passed": 47
+  },
+  "model_budget_tests_included_in_functional_suite": 13,
+  "recorded_basic_contract_passed": 13,
+  "counts_not_summed_due_to_overlap": true
+}

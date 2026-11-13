@@ -1,0 +1,208 @@
+{
+  "created": "2026-11-13T16:27:45+08:00",
+  "reviewed": true,
+  "reviewer": "Codex primary agent, AI-assisted",
+  "uid": 1744,
+  "frozen_commit": "7bb9d16a26c31ff2b797eec06a3628361c6c1dfb",
+  "native_trajectory_sha256": "12d72dcfc515f15d6cca5b6637bd61f042ca7e5a7b6b621b846a27f28e1335db",
+  "files": [
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\freeze.json",
+      "path": "freeze.json",
+      "sha256": "e0caf0cf34a4b4a2794a05ce294b85720f4981f2df6d3bdcb61c4c366df0c27d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\freeze-audit.json",
+      "path": "freeze-audit.json",
+      "sha256": "e24822b299585d05fe52d351606769b80e59a577f9e6cdddc72fbb07d7187034"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\environment-reviewed.json",
+      "path": "environment-reviewed.json",
+      "sha256": "2f3920f741fad27133b4d7c5f6c6cd9dfa302eedfaaf0614d46fabfd234d9e63"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\evidence-map.json",
+      "path": "evidence-map.json",
+      "sha256": "515a83e369d110b4c5d731629f2123498c54a308229e0c18537a15a1c2e89cc2"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\model-final-answer.txt",
+      "path": "model-final-answer.txt",
+      "sha256": "8fe96a7daff0dc750b4ac77d7d9f49427bc2ed6c257719360112f668c9f88e2b"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\test-results.json",
+      "path": "test-results.json",
+      "sha256": "ddfdb33e8692ac49a87e5ec4d1a3015007b856500f10049aef097c7d0eef10a8"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\evaluation-qc.json",
+      "path": "evaluation-qc.json",
+      "sha256": "2641e6ef888cce13e6cdf181281a5b8b9ec3bdc8117d51083b74c3a20b9bb653"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\acceptance-contract-review.json",
+      "path": "verification/acceptance-r1/acceptance-contract-review.json",
+      "sha256": "48f062dfc04dfe8cb621796ff233d674d649039b721068ae6584b5259bb368c5"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\actual-import.json",
+      "path": "verification/acceptance-r1/actual-import.json",
+      "sha256": "df4d4eca162e4b453363a1844884872c5e8e5b280fa0a7dd9acfd1e4527bca4e"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\actual-import.stderr.log",
+      "path": "verification/acceptance-r1/actual-import.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\actual-import.stdout.log",
+      "path": "verification/acceptance-r1/actual-import.stdout.log",
+      "sha256": "22e616bc4c4f97fe806261fbf4c6993a48df547864f16dcb2beac1ece19bfa52"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\budget-contract.json",
+      "path": "verification/acceptance-r1/budget-contract.json",
+      "sha256": "e65a2b21829d51ee1b86d378269b5e58cb31892acec80f4f19681f4a37c9bd15"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\budget-contract.stderr.log",
+      "path": "verification/acceptance-r1/budget-contract.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\budget-contract.stdout.log",
+      "path": "verification/acceptance-r1/budget-contract.stdout.log",
+      "sha256": "e5148792b4b5c50741b5a086887820116670332a7d3feef09bc5ecd0db4a3ebf"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\dependency-lock.json",
+      "path": "verification/acceptance-r1/dependency-lock.json",
+      "sha256": "7b35134efab4668c0cc989b5692b0e93b7379414aa99a7283ba40770ee130be0"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\dependency-lock.stderr.log",
+      "path": "verification/acceptance-r1/dependency-lock.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\dependency-lock.stdout.log",
+      "path": "verification/acceptance-r1/dependency-lock.stdout.log",
+      "sha256": "e4bc1f0b7008756c2640c6bf7ec85ec657888c6f28f99481c4766900d552f614"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\functional-suite.json",
+      "path": "verification/acceptance-r1/functional-suite.json",
+      "sha256": "bfbe2a90fa50403550da42a1bbb6d911b98041ef49d9f59e6c2383fda13676df"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\functional-suite.stderr.log",
+      "path": "verification/acceptance-r1/functional-suite.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\functional-suite.stdout.log",
+      "path": "verification/acceptance-r1/functional-suite.stdout.log",
+      "sha256": "1c641fbb7c3483b0895636ceb37aa56a82d21cfc54cff474ebf994495c33bec5"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\macaroon-demo.py",
+      "path": "verification/acceptance-r1/macaroon-demo.py",
+      "sha256": "9a9d18ed3a9ff13760243d72da426ce4a63c30c8a5617835c1d6acef84f10cd1"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\macaroon-fixtures.py",
+      "path": "verification/acceptance-r1/macaroon-fixtures.py",
+      "sha256": "9e7bff76ffa1c16587cc5a770001dfe0ba2b9a34643378f8cd84f15be3c38c2d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\macaroon_api.py",
+      "path": "verification/acceptance-r1/macaroon_api.py",
+      "sha256": "ea6f65e11e097e7d4058d5fa606500d6cc8d503bc2e0106950af7bf10472e934"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\replay-proof.json",
+      "path": "verification/acceptance-r1/replay-proof.json",
+      "sha256": "f8b1c0a2a1e4e0ecbf7fab1078b20b7d7d7414c9580f225cecd0e973d497aa45"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\reproduction-notes.md",
+      "path": "verification/acceptance-r1/reproduction-notes.md",
+      "sha256": "bff910125fbc704b66ec56ca1865cf49071969fe26a2f97c561e4248ee3761e6"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\reviewed-spec.json",
+      "path": "verification/acceptance-r1/reviewed-spec.json",
+      "sha256": "4b3e04cf60eaba5a00540e1ce6f48b2d8100ebc2e250e83701622a0f78fe7fa5"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\runtime-demo.json",
+      "path": "verification/acceptance-r1/runtime-demo.json",
+      "sha256": "de989d7c2f974461574b7d0e57fe936f4023292fbccf880487f244c50d29abb7"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\runtime-demo.stderr.log",
+      "path": "verification/acceptance-r1/runtime-demo.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\runtime-demo.stdout.log",
+      "path": "verification/acceptance-r1/runtime-demo.stdout.log",
+      "sha256": "74b860cfed8b41700ef54d65be336d99bae5c7ddb5e4db647fcf769a467b4b32"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\runtime-requirements.txt",
+      "path": "verification/acceptance-r1/runtime-requirements.txt",
+      "sha256": "db729722e8f53275261ea01614e02cbcb06c9e6f1618a3f0cff17514598d327a"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\test_macaroon_context.py",
+      "path": "verification/acceptance-r1/test_macaroon_context.py",
+      "sha256": "948e18c533118fec091d5fa1956438e5220149a46a05909ac839678e80650ef4"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\test_macaroon_contract.py",
+      "path": "verification/acceptance-r1/test_macaroon_contract.py",
+      "sha256": "a22f1fc09318eb80af99833e6f095a510ac4280d9777de4fbd7a5e111658649c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\test_macaroon_nested_candidate.py",
+      "path": "verification/acceptance-r1/test_macaroon_nested_candidate.py",
+      "sha256": "528164af074bf85a6d27114dc18e9f2e6d12e1cb7f3807e68a04b723b618383c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\recorded-runtime-r1\\actual-commands.json",
+      "path": "verification/recorded-runtime-r1/actual-commands.json",
+      "sha256": "5f0a56658af6e052fe1972f5d3e8412dc057c5408c714ba77827290adf163882"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\recorded-runtime-r1\\branch-tests-output.log",
+      "path": "verification/recorded-runtime-r1/branch-tests-output.log",
+      "sha256": "e595af686f0e2695c6294abc864fa295827c44e3604ac85a17253163fcf2646e"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\recorded-runtime-r1\\budget-tests-output.log",
+      "path": "verification/recorded-runtime-r1/budget-tests-output.log",
+      "sha256": "57e9e3ffdfcd7e63aa155e38a60b1b24a2541e4b8c26cc9878202c51e46a1274"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\recorded-runtime-r1\\package-tests-output.log",
+      "path": "verification/recorded-runtime-r1/package-tests-output.log",
+      "sha256": "625a0b57bcf08ae278670a9fd1fab42025deecdd341e08736f7f66591e63c442"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\recorded-runtime-r1\\spec.json",
+      "path": "verification/recorded-runtime-r1/spec.json",
+      "sha256": "5629a6fb7db7f65013b214612ab35fe5e64f9d2fba665a2b414cb29d6a1afdb5"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\recorded-runtime-r1\\token-demo-output.log",
+      "path": "verification/recorded-runtime-r1/token-demo-output.log",
+      "sha256": "74b860cfed8b41700ef54d65be336d99bae5c7ddb5e4db647fcf769a467b4b32"
+    }
+  ],
+  "reproduction_readme": "Windows Python 3.14.3; no container or external runtime service. All tokens and bindings are genuinely generated in memory; no network authorization service is used. Create a venv, install verification/acceptance-r1/runtime-requirements.txt, then pip install --no-deps -e . from the exact frozen product commit. Avoid the old baseline editable URL in the raw lock. Put the product root and verification/acceptance-r1 on PYTHONPATH and confirm pymacaroons.__file__ resolves to the frozen tree.\n\nRun python -B -m pytest -q -o addopts= -p no:cacheprovider --tb=short verification/acceptance-r1/test_macaroon_contract.py verification/acceptance-r1/test_macaroon_context.py verification/acceptance-r1/test_macaroon_nested_candidate.py. Frozen behavior is 16 passed and 2 failed. The basic contract checks cover inclusive depth/attempt limits, failed-branch spending, diamond reuse, per-call reset, no candidate mutation, root binding and a bounded cycle. The separate named cycle exception is accepted as a valid result; acceptance-contract-review.json records this pre-execution adapter adjustment.\n\nTwo independently generated failures remain. First, when the first wrong-key discharge also contains a nested third-party caveat, its caveat decryption raises PyNaCl CryptoError outside the delegate's MacaroonVerificationFailedException catch, so the later genuinely valid sibling is never tried. Second, candidate identity is only (id(root verification context), id(candidate)); it omits the current derived key. A candidate revisited under a different derived key is skipped as a cycle without signature work or charging an attempt, allowing the following candidate and its callback to run under budget 2 instead of requiring a third attempt. The evidence establishes incorrect charging/validation order, not an unbounded denial-of-service exploit.\n\npython -B verification/acceptance-r1/macaroon-demo.py prints real callback and signature-entry counters for passing chains, exact limit exhaustion, diamond reuse and both failures. Expected counts are retained verbatim in runtime-demo.stdout.log. The counter wraps the real hmac_digest on the replay only and restores it; it does not stub cryptography or modify source. python -B -m pytest -q -o addopts= -p no:cacheprovider tests/functional_tests reproduces 47 passes, including the 13 model-authored budget tests. Optional property tests and old-Python CI matrix are not claimed. Full original commands, import locations, locks and unchanged frozen hashes are retained. Console helpers are independent acceptance code, not model-authored product interfaces.",
+  "no_model_source_edits": true,
+  "native_trace_included": false
+}

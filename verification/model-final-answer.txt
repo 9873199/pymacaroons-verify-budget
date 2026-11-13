@@ -1,0 +1,31 @@
+完成。所有 47 个功能测试通过（含新增 13 个预算测试），包可正常编译，改动行宽符合 flake8 默认规范。
+
+## 改了什么
+
+**新增可选预算（保持旧 API）** — `Verifier.verify(macaroon, key, max_depth=None, max_attempts=None)`。两个参数都不传时行为与旧版一致（仅多了路径级判环）。
+
+- `pymacaroons/verification_context.py`（新）：每次 `verify` 新建的 `VerificationContext`，同一验证的所有分支共享，`verify` 返回/抛错后即丢弃，下次 `verify`（同一 Verifier 或另一个）从 0 开始。
+- `pymacaroons/caveat_delegates/third_party.py`：discharge 表从 `{identifier: macaroon}` 改成 `{identifier: [候选…]}`，同 identifier 的候选全部保留、逐个尝试。
+- `pymacaroons/exceptions.py`：新增两个专用异常。
+- `pymacaroons/verifier.py`：在 `verify` 里构造上下文。
+
+## 关键语义（对应你的每条要求）
+
+- **深度**：根为 0，每进入一个第三方 discharge 加 1，回溯离开时归还深度槽位。`max_depth=2` 时深度恰好到 2 的链能完成，要到 3 才抛 `MacaroonBudgetExceededException`。
+- **尝试数**：按“实际开始核验的一份候选”累计，在进入前检查 `attempts+1 > max_attempts`，所以**恰好限额完成、再多一次抛异常**；回溯不返还，失败分支花掉的尝试永久计入（爆炸树在限额处精确停止）。
+- **判环只看当前递归路径**：路径身份是 `(本次 context 的 id, 候选对象的 id)`，既不是裸 identifier 也不是 location。菱形里同一个 D 在两条不同路径各进入一次都合法（实测 5 次尝试：A,B,D,C,D），全局 seen 集合会误判，这里不会。
+- **同 identifier 多候选**：前一份签名错、后一份正确时仍能找到（实测 2 次尝试后通过）。签名校验、root 绑定、first-party 回调都在 `verify_discharge` 里照常逐候选执行，去重不跳过任何一步；未绑定 root 的 discharge 仍抛 `MacaroonInvalidSignatureException`。
+- **到限额后不再调业务回调**：预算检查在任何核验工作之前抛出，测试用计数回调与计数 `hmac_digest` 核对了停止的确切步骤（如限额 3 时停在第 4 次进入前：3 次尝试、4 次签名计算（含根）、仅 1 次回调）。
+
+## 一个需要你知道的设计细化
+
+我把“环”和“数值预算”拆成了两个异常：
+
+- `MacaroonBudgetExceededException`：深度/尝试数超限，**终局**，立即停止、不再试别的候选。
+- `MacaroonDischargeCycleException`：路径上重复进入同一候选。环只判死**当前分支**，会回溯去试同 identifier 的其他候选——否则“环候选在前、合法候选在后”时合法链永远过不了，这与你“正常第三方授权链还得能通过”相悖。环候选自身花掉的那一次尝试不返还，所以环也逃不过尝试预算。所有候选都失败时才把环异常向上抛。
+
+`tests/functional_tests/functional_tests.py` 里原有的 `test_mutual_discharge` 旧断言依赖的是“字典删除后取不到 discharge → UnmetCaveat”这一偶然行为，已改为断言新的 `MacaroonDischargeCycleException`。
+
+## 测试覆盖（均用真实生成并 `prepare_for_request` 绑定的 macaroon）
+
+短链、深度边界、菱形复用、错误候选后接正确候选、尝试数包含边界、失败分支不返还（含无预算时 6 组合自然耗尽落到真实签名错误而非 RecursionError）、环（不靠递归）、同 identifier 环候选不污染合法分支、root 绑定仍强制、缺 discharge 仍 UnmetCaveat、**一次预算失败后同一 Verifier 再验合法 token 通过且计数归零**、两个 Verifier 互不共享预算。

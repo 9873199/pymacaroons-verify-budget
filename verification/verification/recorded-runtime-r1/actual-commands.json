@@ -1,0 +1,76 @@
+[
+  {
+    "id": "token-demo",
+    "argv": [
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\macaroon\\env\\Scripts\\python.exe",
+      "-B",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\macaroon-demo.py"
+    ],
+    "exit_code": 0,
+    "finished_at_seconds": 1.06
+  },
+  {
+    "id": "branch-tests",
+    "argv": [
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\macaroon\\env\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "--no-header",
+      "-o",
+      "addopts=",
+      "-p",
+      "no:cacheprovider",
+      "--tb=line",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\test_macaroon_context.py",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\test_macaroon_nested_candidate.py",
+      "--basetemp",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\recording\\r2\\tmp-context"
+    ],
+    "exit_code": 1,
+    "finished_at_seconds": 26.26
+  },
+  {
+    "id": "budget-tests",
+    "argv": [
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\macaroon\\env\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "--no-header",
+      "-o",
+      "addopts=",
+      "-p",
+      "no:cacheprovider",
+      "--tb=short",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\test_macaroon_contract.py",
+      "--basetemp",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\recording\\r2\\tmp-budget"
+    ],
+    "exit_code": 0,
+    "finished_at_seconds": 48.4
+  },
+  {
+    "id": "package-tests",
+    "argv": [
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\macaroon\\env\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "--no-header",
+      "-o",
+      "addopts=",
+      "-p",
+      "no:cacheprovider",
+      "--tb=short",
+      "tests/functional_tests",
+      "--basetemp",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\recording\\r2\\tmp-package"
+    ],
+    "exit_code": 0,
+    "finished_at_seconds": 62.06
+  }
+]

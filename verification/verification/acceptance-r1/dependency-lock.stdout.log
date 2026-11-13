@@ -1,0 +1,12 @@
+cffi==2.1.1
+colorama==0.4.6
+iniconfig==2.3.1
+mock==5.2.0
+packaging==26.3
+pluggy==1.7.0
+pycparser==3.12
+Pygments==2.21.0
+-e git+https://github.com/ecordell/pymacaroons.git@78c55c1d33a0b23ddc71140a9c999f957d79e9dd#egg=pymacaroons
+PyNaCl==1.6.2
+pytest==9.2.0
+six==1.17.0

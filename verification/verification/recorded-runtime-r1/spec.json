@@ -1,0 +1,91 @@
+{
+  "title": "Token authorization",
+  "directory": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\recording\\r2",
+  "cwd": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\replay-source",
+  "capture": "wgc",
+  "console_start_delay_seconds": 12,
+  "environment": {
+    "PYTHONPATH": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\replay-source;D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "commands": [
+    {
+      "id": "token-demo",
+      "label": "Authorization chains and attempt limits",
+      "display": "python macaroon-demo.py",
+      "argv": [
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\macaroon\\env\\Scripts\\python.exe",
+        "-B",
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\macaroon-demo.py"
+      ],
+      "start_at_seconds": 0
+    },
+    {
+      "id": "branch-tests",
+      "label": "Candidate fallback and derived context",
+      "display": "python -m pytest test_macaroon_context.py test_macaroon_nested_candidate.py -q",
+      "argv": [
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\macaroon\\env\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "--no-header",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--tb=line",
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\test_macaroon_context.py",
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\test_macaroon_nested_candidate.py",
+        "--basetemp",
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\recording\\r2\\tmp-context"
+      ],
+      "start_at_seconds": 24
+    },
+    {
+      "id": "budget-tests",
+      "label": "Budget, root binding and path checks",
+      "display": "python -m pytest test_macaroon_contract.py -q",
+      "argv": [
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\macaroon\\env\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "--no-header",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--tb=short",
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\verification\\acceptance-r1\\test_macaroon_contract.py",
+        "--basetemp",
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\recording\\r2\\tmp-budget"
+      ],
+      "start_at_seconds": 46
+    },
+    {
+      "id": "package-tests",
+      "label": "Package functional checks",
+      "display": "python -m pytest tests/functional_tests -q",
+      "argv": [
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\macaroon\\env\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "--no-header",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--tb=short",
+        "tests/functional_tests",
+        "--basetemp",
+        "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-macaroon\\recording\\r2\\tmp-package"
+      ],
+      "start_at_seconds": 59
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+...FF                                                                    [100%]
+================================== FAILURES ===================================
+E   Failed: DID NOT RAISE MacaroonBudgetExceededException
+D:\hc\userFeedback\cache\execution-security-new11-20261112\evaluation\uf-20261112-new15-macaroon\verification\acceptance-r1\test_macaroon_context.py:43: Failed: DID NOT RAISE MacaroonBudgetExceededException
+E   nacl.exceptions.CryptoError: Decryption failed. Ciphertext failed verification
+D:\hc\userFeedback\cache\execution-security-new11-20261112\tasks\macaroon\env\Lib\site-packages\nacl\exceptions.py:88: nacl.exceptions.CryptoError: Decryption failed. Ciphertext failed verification
+=========================== short test summary info ===========================
+FAILED ..\test_macaroon_context.py::test_failed_candidate_attempt_still_consumes_shared_budget[True]
+FAILED ..\test_macaroon_nested_candidate.py::test_wrong_key_candidate_with_nested_caveat_does_not_abort_valid_sibling
+2 failed, 3 passed in 0.35s

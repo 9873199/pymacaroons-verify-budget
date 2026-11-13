@@ -1,0 +1,44 @@
+................FF                                                       [100%]
+================================== FAILURES ===================================
+______ test_failed_candidate_attempt_still_consumes_shared_budget[True] _______
+..\test_macaroon_context.py:43: in test_failed_candidate_attempt_still_consumes_shared_budget
+    with pytest.raises(BudgetError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE MacaroonBudgetExceededException
+__ test_wrong_key_candidate_with_nested_caveat_does_not_abort_valid_sibling ___
+..\test_macaroon_nested_candidate.py:18: in test_wrong_key_candidate_with_nested_caveat_does_not_abort_valid_sibling
+    assert verifier.verify(root,'generated-root',max_depth=2,max_attempts=3)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pymacaroons\verifier.py:65: in verify
+    return self.verify_discharge(
+pymacaroons\verifier.py:76: in verify_discharge
+    calculated_signature = self._verify_caveats(
+pymacaroons\verifier.py:96: in _verify_caveats
+    if self._caveat_met(root,
+pymacaroons\verifier.py:114: in _caveat_met
+    .verify_third_party_caveat(
+pymacaroons\caveat_delegates\third_party.py:111: in verify_third_party_caveat
+    caveat_met = verifier.verify_discharge(
+pymacaroons\verifier.py:76: in verify_discharge
+    calculated_signature = self._verify_caveats(
+pymacaroons\verifier.py:96: in _verify_caveats
+    if self._caveat_met(root,
+pymacaroons\verifier.py:114: in _caveat_met
+    .verify_third_party_caveat(
+pymacaroons\caveat_delegates\third_party.py:90: in verify_third_party_caveat
+    caveat_key = self._extract_caveat_key(signature, caveat)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pymacaroons\caveat_delegates\third_party.py:150: in _extract_caveat_key
+    decrypted = box.decrypt(caveat._verification_key_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\..\tasks\macaroon\env\Lib\site-packages\nacl\secret.py:149: in decrypt
+    plaintext = nacl.bindings.crypto_secretbox_open_easy(
+..\..\..\..\..\tasks\macaroon\env\Lib\site-packages\nacl\bindings\crypto_secretbox.py:152: in crypto_secretbox_open_easy
+    ensure(
+..\..\..\..\..\tasks\macaroon\env\Lib\site-packages\nacl\exceptions.py:88: in ensure
+    raise raising(*args)
+E   nacl.exceptions.CryptoError: Decryption failed. Ciphertext failed verification
+=========================== short test summary info ===========================
+FAILED ..\test_macaroon_context.py::test_failed_candidate_attempt_still_consumes_shared_budget[True]
+FAILED ..\test_macaroon_nested_candidate.py::test_wrong_key_candidate_with_nested_caveat_does_not_abort_valid_sibling
+2 failed, 16 passed in 0.57s
